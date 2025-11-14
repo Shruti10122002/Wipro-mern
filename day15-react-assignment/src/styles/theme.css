@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Theme styles */
+.light {
+  background-color: #f2f2f2;
+  color: #222;
+}
+
+.dark {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+}
+
+/* Buttons */
+button {
+  margin: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Theme toggle button */
+.light button {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark button {
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+/* Timer styling */
+h2 {
+  margin-top: 16px;
+  font-size: 1.5rem;
+}
+.offline-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff4d4f;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+

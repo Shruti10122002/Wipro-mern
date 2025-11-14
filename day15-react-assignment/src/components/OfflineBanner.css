@@ -1,0 +1,25 @@
+/* OfflineBanner.css */
+
+.offline-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff4c4c;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

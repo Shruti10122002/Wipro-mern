@@ -1,0 +1,27 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #ffd700;
+}
