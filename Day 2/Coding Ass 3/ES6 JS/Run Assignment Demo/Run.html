@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System (ES6 Assignment)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f9;
+      text-align: center;
+      padding: 30px;
+    }
+    h2 {
+      color: #333;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .output {
+      text-align: left;
+      margin: 0 auto;
+      max-width: 600px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .card {
+      background-color: #eef3fc;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .highlight {
+      color: #0077cc;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎓 Student Management System (ES6 Demo)</h2>
+  <button id="runDemo">Run Assignment Demo</button>
+  <div id="result" class="output"></div>
+
+  <script>
+    document.getElementById("runDemo").addEventListener("click", () => {
+      
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "";
+
+     
+      const instituteName = "Wipro Pre-Skilling Training By Great Learning";
+      let courseName = "Wipro Mern Batch";
+
+      
+      const coreSubjects = ["HTML", "CSS", "JavaScript"];
+      const advancedSubjects = ["React", "Node.js", "MongoDB"];
+      const allSubjects = [...coreSubjects, ...advancedSubjects];
+
+      
+      const greet = (name) => `Welcome ${name} to ${instituteName}!`;
+
+     
+      class Student {
+        constructor(name, age, skills) {
+          this.name = name;
+          this.age = age;
+          this.skills = new Set(skills); // Using Set for unique skills
+        }
+
+        display() {
+          return `
+            <div class="card">
+              <h3>${this.name}</h3>
+              <p>Age: ${this.age}</p>
+              <p>Skills: <span class="highlight">${[...this.skills].join(", ")}</span></p>
+            </div>
+          `;
+        }
+      }
+
+      // Create student objects
+      const student1 = new Student("Shruti Ranjan", 22, ["JavaScript", "React", "Problem Solving", "React"]);
+      const student2 = new Student("Alice", 21, ["Python", "Machine Learning", "Teamwork"]);
+
+      // ✅ Use of Map Object
+      const studentGrades = new Map();
+      studentGrades.set("Shruti Ranjan", 88);
+      studentGrades.set("Alice", 92);
+
+      // ✅ Dynamic Output Display
+      let outputHTML = `
+        <h3>Institute: ${instituteName}</h3>
+        <p>Course: <strong>${courseName}</strong></p>
+        <p>All Subjects: ${allSubjects.join(", ")}</p>
+        <hr>
+        <h3 Greetings</h3>
+        <p>${greet(student1.name)}</p>
+        <p>${greet(student2.name)}</p>
+        <hr>
+        <h3>🎯 Student Details</h3>
+        ${student1.display()}
+        ${student2.display()}
+        <hr>
+        <h3>Student Grades</h3>
+        <ul>
+          ${[...studentGrades.entries()].map(([name, grade]) => `<li>${name}: <strong>${grade}</strong></li>`).join("")}
+        </ul>
+        <hr>
+        <h3> Unique Skills (From All Students)</h3>
+      `;
+
+      // ✅ Use of Set to combine and show unique skills of all students
+      const combinedSkills = new Set([...student1.skills, ...student2.skills]);
+      outputHTML += `<p class="highlight">${[...combinedSkills].join(", ")}</p>`;
+
+      // Show all results
+      resultDiv.innerHTML = outputHTML;
+    });
+  </script>
+</body>
+</html>

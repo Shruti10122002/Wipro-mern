@@ -1,0 +1,207 @@
+<!--Following are the standard features of ES6-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [1,2,3];
+        const newNumbers = [...numbers, 4 ,5, 6];
+        console.log("New Numbers Array", newNumbers);
+
+
+        const person ={name: "Alice", age : 25};
+        const updatedPerson = {...person,city: "New York"};
+        console.log("updated Person Object:", updatedPerson);
+        
+    </script>
+
+    <script>
+
+        const student = { name: "Bob", age: 20};
+        const updatedStudent = {...student, id: 123};
+        console.log("updated student object",updatedStudent);
+    </script>
+
+    <script>
+        const user = { name: "Shruti", age: 23 };
+        const details = { city: "Bihar", country: "India" };
+
+        const userInfo = { ...user, ...details };
+         console.log(userInfo);
+
+    </script>
+
+    <script>
+
+        function add(a, b) {
+        return a + b;
+}
+
+// Arrow function
+const addArrow = (a, b) => a + b;
+
+console.log(addArrow(5, 3)); 
+    </script>
+
+
+<script>
+    class Person {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        
+        greet() {
+            console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+        }
+    }
+
+  
+    const alice = new Person("Alice", 25);
+    alice.greet(); 
+
+  
+    alert(`Person Details:\nName: ${alice.name}\nAge: ${alice.age}`);
+</script>
+
+<!-- Create another object using the Person class -->
+<script>
+    const bob = new Person("Bob", 30);
+    bob.greet(); 
+
+    // Display dialog box
+    alert(`Person Details:\nName: ${bob.name}\nAge: ${bob.age}`);
+</script>
+
+<script>
+
+      // Example of Map
+        const map = new Map();
+        map.set("name", "Alice");
+        map.set("age", 25);
+        console.log("Map Example:");
+        map.forEach((value, key) => {
+            console.log(`${key}: ${value}`);
+        });
+        // Example of Set
+        const set = new Set();
+        set.add(1);
+        set.add(2);
+        set.add(2); // Duplicate value, will be ignored
+        console.log("Set Example:");
+        set.forEach(value => {
+            console.log(value);
+        });
+</script>
+<script>
+    // Step 1: Create a promise
+let orderFood = new Promise((resolve, reject) => {
+  let foodReady = true; // Change this to false to simulate rejection
+
+  console.log("You placed an order...");
+
+  setTimeout(() => {
+    if (foodReady) {
+      resolve("Your food is ready!");
+    } else {
+      reject("Sorry, the dish is not available.");
+    }
+  }, 2000); // simulating cooking time
+});
+
+// Step 2: Handle the promise
+orderFood
+  .then((message) => {
+    console.log("Waiter:", message);
+  })
+  .catch((error) => {
+    console.log("Waiter:", error);
+  })
+  .finally(() => {
+    console.log("Thank you for visiting our restaurant!");
+  });
+
+
+</script>
+
+
+<script>
+        function fetchTodo() {
+            return fetch('https://jsonplaceholder.typicode.com/todos')
+            // fetch() returns a promise that resolves to the Response object representing the response to the request
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                });
+        }
+        // Calling fetchTodo function
+        fetchTodo()
+            .then(data => {
+                console.log("Todo item fetched from API:", data);
+            })
+            .catch(error => {
+                console.error("There was a problem with the fetch operation:", error);
+            });
+    </script>
+
+    <script>
+
+        // Fetch a list of items from a public API
+fetch("https://fakestoreapi.com/products") // sample fake store API
+  .then((response) => response.json())     // convert response to JSON
+  .then((data) => {
+    console.log("List of items:");
+    data.forEach((item) => {
+      console.log(`ID: ${item.id}, Title: ${item.title}`);
+    });
+  })
+  .catch((error) => {
+    console.log("Error fetching items:", error);
+  });
+
+
+
+  
+export function add(a, b) {
+    return a + b;
+}
+export function subtract(a, b) {
+    return a - b;
+}
+<!-- // In main.js -->
+import { add, subtract } from './mathUtils.js';
+
+
+// Here we will define some mathematical utility functions using ES6 features
+// with the help of arrow functions and export them for use in other modules
+// Function to calculate the square of a number
+export const square = (x) => x * x;
+// Function to calculate the cube of a number
+export const cube = (x) => x * x * x;
+// Function to calculate the factorial of a number using recursion
+export const factorial = (n) => {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+};  
+// Function to calculate the power of a number
+export const power = (base, exponent) => {
+    return base ** exponent;
+};
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

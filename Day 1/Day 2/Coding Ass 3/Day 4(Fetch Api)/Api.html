@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List Example</title>
+</head>
+<body>
+
+  <h2>Product List</h2>
+  <div id="product-list"></div>
+
+  <script>
+    const products = [
+      { name: "Laptop", price: 60000 },
+      { name: "Smartphone", price: 25000 },
+      { name: "Headphones", price: 3000 },
+      { name: "Smartwatch", price: 8000 },
+      { name: "Tablet", price: 18000 }
+    ];
+
+    const container = document.getElementById("product-list");
+
+    products.forEach(product => {
+      const item = document.createElement("p");
+      item.textContent = `${product.name} - ₹${product.price}`;
+      container.appendChild(item);
+    });
+  </script>
+
+</body>
+</html>

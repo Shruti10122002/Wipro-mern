@@ -1,0 +1,113 @@
+/* ===== Base Styles ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  color: #1f2937;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: #6c5ce7;
+}
+
+/* ===== Navbar / Brand ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #6c5ce7;
+  padding: 10px 20px;
+  color: white;
+}
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.navbar ul li a {
+  color: white;
+  font-weight: bold;
+}
+.navbar ul li a:hover {
+  color: #dcd6f7;
+}
+
+/* ===== Sections ===== */
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+#profile, #timetable {
+  display: none;
+  margin-top: 30px;
+}
+#profile:target,
+#timetable:target {
+  display: block;
+}
+
+/* ===== Profile Card ===== */
+.profile-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.field {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  min-width: 200px;
+  flex: 1 1 220px;
+}
+
+/* ===== Avatar ===== */
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: bold;
+  background: #6c5ce7;
+  margin: 0 auto 15px;
+}
+
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+}
+th {
+  background: #6c5ce7;
+  color: white;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .field {
+    min-width: 100%;
+  }
+}

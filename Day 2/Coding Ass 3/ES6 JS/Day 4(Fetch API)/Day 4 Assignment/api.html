@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Fetch API — Posts & Todos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+  <header>
+    <div class="row">
+      <h1>Blog Posts & Todo List</h1>
+      <button class="btn" id="refresh-all">Refresh All</button>
+      <button class="btn" id="cancel-requests" disabled>Cancel</button>
+      <span class="muted">Data from JSONPlaceholder</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <!-- Posts -->
+      <section aria-labelledby="posts-title">
+        <h2 id="posts-title">Posts <span class="count">(<span id="posts-count">0</span>)</span></h2>
+        <div id="posts-loading" class="loading" hidden><span class="spinner"></span> Loading posts…</div>
+        <div id="posts-error" class="error" hidden></div>
+        <ul id="posts-list" aria-live="polite"></ul>
+      </section>
+
+      <!-- Todos -->
+      <section aria-labelledby="todos-title">
+        <h2 id="todos-title">Todos <span class="count">(<span id="todos-count">0</span>)</span></h2>
+        <div class="toolbar">
+          <label for="todos-filter" class="muted">Filter:</label>
+          <select id="todos-filter">
+            <option value="all" selected>All</option>
+            <option value="active">Active</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <div id="todos-loading" class="loading" hidden><span class="spinner"></span> Loading todos…</div>
+        <div id="todos-error" class="error" hidden></div>
+        <ul id="todos-list" aria-live="polite"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="Js.js"></script>
+</body>
+</html>
